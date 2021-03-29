@@ -7,10 +7,8 @@ import FormTable from './components/FormTable';
 const App = () => {
   return (
     <Provider store={store}>
-      <div>
-        <Form />
-        <FormTable />
-      </div>
+      <Form />
+      <FormTable />
     </Provider>
   );
 };

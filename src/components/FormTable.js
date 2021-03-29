@@ -1,13 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setId } from '../redux/actions/id';
-import { setName } from '../redux/actions/name';
-import { setFatherName } from '../redux/actions/fatherName';
-import { setAge } from '../redux/actions/age';
-import { setAddress } from '../redux/actions/address';
-import { setData } from '../redux/actions/data';
-import { setEditButton } from '../redux/actions/editbutton';
-
+import {
+  setId,
+  setName,
+  setFatherName,
+  setAge,
+  setAddress,
+  setData,
+  setEditButton,
+} from '../redux/actions/index';
 const FormTable = ({
   data,
   setId,
@@ -33,16 +34,16 @@ const FormTable = ({
         <table border='1'>
           <thead>
             <tr>
-              <th>ID |</th>
-              <th>Full Name |</th>
-              <th> Father's Name |</th>
-              <th> Age |</th>
-              <th> Address </th>
-              <th> Edit Details </th>
+              <th>ID</th>
+              <th>Full Name</th>
+              <th> Father's Name</th>
+              <th> Age</th>
+              <th> Address</th>
+              <th>Edit Details</th>
             </tr>
           </thead>
           <tbody>
-            {data.map(({ id, name, fatherName, age, address }) => (
+            {data?.map(({ id, name, fatherName, age, address }) => (
               <tr>
                 <td>{id}</td>
                 <td>{name}</td>

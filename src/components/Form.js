@@ -1,12 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setId } from '../redux/actions/id';
-import { setName } from '../redux/actions/name';
-import { setFatherName } from '../redux/actions/fatherName';
-import { setAge } from '../redux/actions/age';
-import { setAddress } from '../redux/actions/address';
-import { setData } from '../redux/actions/data';
-import { setEditButton } from '../redux/actions/editbutton';
+import {
+  setId,
+  setName,
+  setFatherName,
+  setAge,
+  setAddress,
+  setData,
+  setEditButton,
+} from '../redux/actions/index';
 
 const Form = ({
   id,
@@ -39,14 +41,13 @@ const Form = ({
     if (!name || !id || !fatherName || !address || age <= 0) {
       alert('Error! Please Enter Your Details Correctly');
     } else setData([...data, tempObj]);
-    console.log(data);
 
     //----------------------------------Check For Edit Button---------------------------------------------------
 
     if (editButton) {
       let newArr = [...data];
-      const updatedArray = newArr.map((value) => {
-        if (value.id === id) {
+      const updatedArray = newArr?.map((value) => {
+        if (value?.id === id) {
           return {
             id,
             name,
